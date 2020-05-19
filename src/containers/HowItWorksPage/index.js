@@ -29,13 +29,6 @@ const HowItWorksPage = props => (
       paragraph='A'
       image={hiwMainPicture}
     />
-    <MainComponent
-      changePage={props.changePage}
-      backgroundColor='secondary'
-      headingOne='Como funciona?'
-      paragraph='A'
-      image={hiwMainPicture}
-    />
     <FooterComponent
       changePage={props.changePage}
       footerColor='white'

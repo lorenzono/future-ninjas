@@ -1,7 +1,7 @@
 import logoHeader from '../img/logo-header.png'
 import iconContract from '../img/icone-contrato.png'
 import iconNinja from '../img/icone-ninja.png'
-import pictureMain from '../img/main.png'
+import pictureMain from '../img/home-main.png'
 import tipOne from '../img/home-dica-escolha-undraw.svg'
 import tipTwo from '../img/home-dica-duvida-undraw.svg'
 import tipThree from '../img/home-dica-pesquisa-undraw.svg'
@@ -10,7 +10,9 @@ import facebook from '../img/social-facebook.png'
 import linkedin from '../img/social-linkedin.png'
 import email from '../img/social-email.png'
 
-import hiwPictureMain from '../img/logo-banner.png'
+import hiwPictureMain from '../img/logo.png'
+
+import createPictureMain from '../img/create-main.png'
 
 export const title = 'Future Ninjas'
 
@@ -145,6 +147,10 @@ export const formData = [
         title: 'Cartão de Débito'
       },
       {
+        key: 'picpay',
+        title: 'PicPay'
+      },
+      {
         key: 'bitcoin',
         title: 'Bitcoin'
       },
@@ -192,3 +198,8 @@ export const initialState = form
 // Edit: fazia a mesma coisa quando não tinha paymentMethods, que era um objeto com um array de objetos em uma propriedade
 // Obs: Treinar JS é legal, mas tá me dando um nó na cabeça
 // Agora você vê a diferença de usar for e map
+
+export const createMainPicture = {
+  src: createPictureMain,
+  alt: ''
+}

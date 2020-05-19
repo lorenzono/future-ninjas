@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Main from '../../components/CreateNewJobPage/Main'
 import HeaderComponent from '../../components/macro/Header/index'
-import { navItems, headerLogo } from '../../data'
+import MainComponent from '../../components/macro/Main'
+import { navItems, headerLogo, createMainPicture, title, socialMedias, formData, initialState } from '../../data'
+import FooterComponent from '../../components/macro/Footer'
 
 const CreateNewJobPage = props => (
   <>
@@ -14,7 +15,21 @@ const CreateNewJobPage = props => (
       logo={headerLogo}
       navItems={navItems}
     />
-    <Main />
+    <MainComponent
+      backgroundColor='secondary'
+      headingOne={'aaaa'}
+      formData={formData}
+      initialState={initialState}
+      image={createMainPicture}
+    />
+    <FooterComponent
+      changePage={props.changePage}
+      footerColor='white'
+      navColor='primary'
+      title={title}
+      navItems={navItems}
+      socialMedias={socialMedias}
+    />
   </>
 )
 

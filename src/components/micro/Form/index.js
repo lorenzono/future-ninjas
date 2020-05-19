@@ -112,6 +112,7 @@ export default class Form extends React.Component {
                   color='white'
                   backgroundColor='primary'
                   tabIndex="0"
+                  margin={1}
                 >
                   {input.title}
                 </Button>

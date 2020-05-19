@@ -186,7 +186,7 @@ export const Main = styled.main`
 export const MainDivision = styled.div`
   width: ${smallDivisionWidth};
   margin: auto;
-  padding: 3vh 0;
+  padding: 20px 0;
   display: flex;
 
   @media (max-width: ${mediaQueryMaxWidthOne}px) {
@@ -204,7 +204,7 @@ export const MainSection = styled.section`
   
   @media (max-width: ${mediaQueryMaxWidthOne}px) {
     width: 100%;
-    padding-block-end: 2vh;
+    padding-block-end: 20px;
     text-align: center;
   }
 `
@@ -213,7 +213,7 @@ export const MainSection = styled.section`
 export const MainHeading = styled.div`
   font-size: 28px;
   font-weight: bold;
-  padding-block-end: 1vh;
+  padding-block-end: 10px;
 `
 
 
@@ -230,7 +230,7 @@ export const Button = styled.div`
   max-width: 95%;
   height: 50px;
   background-color: ${props => pickColor(props.backgroundColor)};
-  margin: 10px 20px;
+  margin: ${props => props.margin ? '20px auto' : '10px 20px'};
   color: ${props => pickColor(props.color)};
   text-transform: uppercase;
   font-weight: bold;
@@ -286,7 +286,7 @@ export const Section = styled.section`
 export const SectionDivision = styled.div`
 	width: ${smallDivisionWidth};
 	margin: auto;
-	padding: 3vh 0;
+	padding: 30px 0;
 	display: flex;
   flex-direction: column;
   
@@ -300,7 +300,7 @@ export const SectionTitle = styled.div`
   font-weight: bold;
   letter-spacing: 1px;
 	color: ${props => enhanceColor(props.color)};
-	padding-block-end: 2vh;
+	padding-block-end: 20px;
 	text-align: center;
 `
 
@@ -330,7 +330,7 @@ export const Card = styled.div`
   @media (max-width: ${mediaQueryMaxWidthTwo}px) {
     max-width: 600px;
     flex-direction: row;
-    margin: 1vh auto;
+    margin: 10px auto;
   }
 
 `
@@ -341,7 +341,7 @@ export const CardPictureDiv = styled.div` // Não consigo lidar com responsivida
   background-color: #363636;
   display: flex;
   justify-content: center;
-  margin-block-end: 2vh;
+  margin-block-end: 20px;
 
   ::after {
     content: "";
@@ -363,7 +363,7 @@ export const CardTitle = styled.div`
   font-weight: bold;
   color: ${props => enhanceColor(props.color)};
   text-align: center;
-  padding-block-end: 1vh;
+  padding-block-end: 10px;
 `
 
 
@@ -375,17 +375,15 @@ export const CardParagraph = styled.div`
 
 
 
-
-
-
 export const Footer = styled.footer`
   background-color: ${props => pickColor(props.color)};
 `
 
+
 export const FooterDivision = styled.div`
   width: ${smallDivisionWidth};
 	margin: auto;
-	padding: 3vh 0;
+	padding: 30px 0;
   font-weight: bold;
 	display: flex;
   justify-content: space-around;
@@ -400,7 +398,7 @@ export const FooterTitle = styled.div`
   font-size: 20px;
   letter-spacing: 0.25px;
   color: ${props => pickColor(props.color)};
-	padding-block-end: 1vh;
+	padding-block-end: 10px;
 `
 
 
@@ -410,7 +408,7 @@ export const FooterLink = styled.div`
   flex-direction: column;
   color: ${props => pickColor(props.color)};
   align-items: flex-start;
-  padding: 1vh 0;
+  padding: 10px 0;
   cursor: pointer;
 `
 
@@ -420,8 +418,7 @@ export const ExternalLink = styled.a`
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 1vh 0;
-
+  padding: 10px 0;
   
   @media (max-width: 480px) {
     justify-content: center;
@@ -430,9 +427,10 @@ export const ExternalLink = styled.a`
 
 
 export const Logo = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 `
+
 
 export const Span = styled.span`
   margin-left: 10px;
@@ -443,24 +441,21 @@ export const Span = styled.span`
 `
 
 
+
+
+export const InputDiv = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-block-end: 20px;
+`
+
+
 export const Label = styled.label`
   display: inline-block;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 `
 
-export const CheckboxLabel = styled.label`
-  font-weight: normal;
-  padding-bottom: 5px;
-
-  :hover {
-    color: ${enhanceColor('primary')}
-  }
-
-  ::before {
-    content: '⭕';
-  }
-`
 
 const generalInput = `
   width: 100%;
@@ -469,7 +464,8 @@ const generalInput = `
   background-color: ${pickColor('white')};
   border: none;
   font: 400 14px Ubuntu;
-  padding: 8px;
+  padding: 8px; // Deixar o padding na direita faz o input ignorar a margem
+  padding-right: 2px;
   display: block;
 `
 
@@ -479,7 +475,25 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
   ${generalInput}
+  height: 50px;
 `
+
+
+export const CheckboxLabel = styled.label`
+  display: inline-block;
+  font-weight: normal;
+  padding-block-end: 8px;
+
+  :hover {
+    color: ${enhanceColor('primary')}
+  }
+
+  ::before {
+    content: '⭕';
+    padding-right: 2px;
+  }
+`
+
 
 export const HiddenCheckbox = styled.input`
   appearance: none;
@@ -488,8 +502,4 @@ export const HiddenCheckbox = styled.input`
   :checked ~ ${CheckboxLabel}::before {
     content: '✔️';
   }
-`
-
-export const InputDiv = styled.div`
-  margin-bottom: 20px;
 `
